@@ -31,7 +31,7 @@ var keneanung = (function (keneanung) {
         var attacks = 0;
 
         var fleeDirection = "n";
-        var lastRoom = "";
+        var lastRoom = ""; 
 
         var colorify = function (str) {
             var pattern = /##(\w+)##/;
