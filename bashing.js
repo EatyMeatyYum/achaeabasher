@@ -1,3 +1,5 @@
+// Latest build: 12/8/2020
+
 var keneanung = (function (keneanung) {
     "use strict";
     keneanung.bashing = (function () {
@@ -239,6 +241,7 @@ var keneanung = (function (keneanung) {
                 if(!targetSet){
                     clearTarget();
                     stopAttack();
+                    set_variable("KBashOn", false);
                 }else{
                     attacking++;
                 }
@@ -266,6 +269,7 @@ var keneanung = (function (keneanung) {
 
         var stopAttack = function () {
             var trigger = reflex_find_by_name("trigger", "keneanung.bashing.queueTrigger", false, false, "Bashing");
+            set_variable("KBashOn", false);
             reflex_disable(trigger);
             send_direct("cq all");
             attacking = -1;
@@ -363,16 +367,19 @@ var keneanung = (function (keneanung) {
             if (attacking == -1) {
                 setTarget();
                 startAttack();
+                set_variable("KBashOn", true);
                 kecho("Nothing will stand in our way.\n");
             } else{
                 clearTarget();
                 stopAttack();
+                set_variable("KBashOn", false);
                 kecho("Lets save them for later.\n");
             }
          };
 
         module.flee = function() {
             stopAttack();
+            set_variable("KBashOn", false);
             send_direct("queue prepend eqbal " + fleeDirection)
         };
 
