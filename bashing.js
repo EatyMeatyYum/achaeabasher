@@ -1,4 +1,4 @@
-// Latest build: 12/8/2020
+// Latest build: 12/9/2020
 
 var keneanung = (function (keneanung) {
     "use strict";
@@ -368,7 +368,7 @@ var keneanung = (function (keneanung) {
                 setTarget();
                 startAttack();
                 set_variable("KBashOn", true);
-                kecho("Nothing will stand in our way.\n");
+                kecho("Nothing can stand in our way.\n");
             } else{
                 clearTarget();
                 stopAttack();
